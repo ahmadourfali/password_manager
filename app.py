@@ -7,10 +7,9 @@ from cryptography.fernet import Fernet
 # write_key()
 
 def load_key():
-    file = open("key.key","rb")
-    key = file.read()
-    file.close()
-    return key
+    with open("key.key","rb") as f:
+        master_key = f.read()
+        return master_key
 
 key = load_key()
 fer = Fernet(key)
