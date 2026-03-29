@@ -1,5 +1,9 @@
 def add():
-    pass
+    name = input("Account Name: ")
+    pwd = input("Password: ")
+    with open("paswords.txt", "a") as f:
+        f.write(name + "|" + pwd +"\n")
+
 def view():
     pass
 
